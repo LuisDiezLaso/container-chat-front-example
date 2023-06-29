@@ -1,4 +1,4 @@
-FROM node:14.21.1 AS builder 
+FROM node:10.18.0 AS builder 
 WORKDIR /opt/front 
 COPY . . 
 RUN npm install
