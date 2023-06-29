@@ -19,7 +19,6 @@ jobs:
       - name: Install & Tests
         run: |
           npm install
-          npm audit fix --force
           npm test
   cd:
     runs-on: ubuntu-latest
@@ -27,6 +26,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Change version
+        run: npm install -g npm@9.7.2
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
