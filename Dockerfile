@@ -2,6 +2,7 @@ FROM node AS builder
 WORKDIR /opt/front 
 COPY . . 
 RUN npm install -g npm@9.7.2
+RUN yarn
 RUN npm run build:prod 
 
 FROM nginx 
