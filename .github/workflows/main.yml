@@ -19,6 +19,7 @@ jobs:
       - name: Install & Tests
         run: |
           npm install
+          npm audit fix --force
           npm test
   cd:
     runs-on: ubuntu-latest
