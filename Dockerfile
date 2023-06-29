@@ -2,7 +2,7 @@ FROM node AS builder
 WORKDIR /opt/front 
 COPY . . 
 RUN npm install
-RUN npm install react-scripts@5.0.2
+RUN npm install react-scripts@latest
 RUN npm run build:prod
 
 FROM nginx 
