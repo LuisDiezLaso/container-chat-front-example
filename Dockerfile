@@ -1,7 +1,8 @@
-FROM node:16.16.0 AS builder 
+FROM node AS builder 
 WORKDIR /opt/front 
 COPY . . 
 RUN npm install
+RUN npm install react-scripts@latest
 RUN npm run build:prod
 
 FROM nginx 
